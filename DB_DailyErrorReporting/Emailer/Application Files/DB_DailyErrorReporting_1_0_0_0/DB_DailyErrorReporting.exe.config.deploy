@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+    </startup>
+  <connectionStrings>
+    <add name="Emails" connectionString="V:\Research\Shared\DMI_ErrorReporting/Emails.txt"/>
+    <add name="SqlFiles" connectionString="V:/Research/Shared/DMI_ErrorReporting/SQL/"/>
+    <add name="ConnectionString" connectionString="Server=SKPFISDSSDB01.P.FDOTC; Database=Master; User Id=Universal_Admin; Password = dixieBMW1"/>
+    <add name="wbLoc" connectionString="V:/Research/Shared/DMI_ErrorReporting/CreatedWB/"/>
+  </connectionStrings>
+</configuration>

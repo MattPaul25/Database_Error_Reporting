@@ -1,0 +1,14 @@
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\bin\Debug\DB_DailyErrorReporting.exe.config
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\obj\Debug\DB_DailyErrorReporting.csprojResolveAssemblyReference.cache
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\obj\Debug\DB_DailyErrorReporting.csproj.ResolveComReference.cache
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\bin\Debug\DB_DailyErrorReporting.exe
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\bin\Debug\DB_DailyErrorReporting.pdb
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\bin\Debug\ClosedXML.dll
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\bin\Debug\DocumentFormat.OpenXml.dll
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\bin\Debug\ClosedXML.xml
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\obj\Debug\DB_DailyErrorReporting.exe
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\obj\Debug\DB_DailyErrorReporting.pdb
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\bin\Debug\DB_DailyErrorReporting.exe.manifest
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\bin\Debug\DB_DailyErrorReporting.application
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\obj\Debug\DB_DailyErrorReporting.exe.manifest
+c:\users\fargusonm\documents\visual studio 2013\Projects\DB_DailyErrorReporting\DB_DailyErrorReporting\obj\Debug\DB_DailyErrorReporting.application
