@@ -14,7 +14,16 @@ namespace DB_DailyErrorReporting
 {
     public static class TextUtils
     {
-        
+        public static void Comment(string Comment = "")
+        {
+            //writes comment to console and logs it on log
+            Console.WriteLine(Comment);
+            using (StreamWriter sw = new StreamWriter("History.txt", true))
+            {
+                sw.WriteLine(Comment);
+                sw.Close();
+            }
+        }
         public static string RightOf(string yourString, string yourMarker)
         {
             //method or function that pulls everything right of a unique Marker

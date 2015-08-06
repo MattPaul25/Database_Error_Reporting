@@ -14,8 +14,7 @@ namespace DB_DailyErrorReporting
 
         public MakeSQLString(string sqlFile)
         {
-            // TODO: Complete member initialization
-
+            
             this.sqlFile = ConfigurationManager.ConnectionStrings["SqlFiles"].ConnectionString + sqlFile;
             sql = readSql(sqlFile);
         }

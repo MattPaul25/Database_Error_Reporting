@@ -11,14 +11,14 @@ namespace DB_DailyErrorReporting
     class GenerateEmail
     {
         private string sqlString;
-        private string user;
+        private string users;
         private string excelFolder;
 
-        public GenerateEmail(string sqlString, string user)
+        public GenerateEmail(EmailObject emlObj)
         {
             // TODO: Complete member initialization
-            this.sqlString = sqlString;
-            this.user = user;
+            this.sqlString = emlObj.Emails;
+            this.users = emlObj.Queries;
             this.excelFolder = ConfigurationManager.ConnectionStrings["wbLoc"].ConnectionString;
             CreateSpreadsheets();
             CreateEmail();
@@ -44,7 +44,7 @@ namespace DB_DailyErrorReporting
         }
         private void CreateEmail()
         {
-            var emlSend = new SendEmail(user, excelFolder);
+            var emlSend = new SendEmail(users, excelFolder);
         }
         private void DeleteFiles()
         {
