@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KI8mCMK/KIkaMQNe3ng49mbNZdkBXn95OZzCIX3Rxus=</dsig:DigestValue>
+        <dsig:DigestValue>LNeNzu7XaNLyi6dC5A9wy6Ycpyam1Dkj7N5SFpU8XYU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -77,13 +77,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="DB_DailyErrorReporting.exe.config" size="779">
+  <file name="DB_DailyErrorReporting.exe.config" size="1015">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+Is4JNAJIRHTy6Ps8WfsokKznRklkeuFuQV3InEVbE4=</dsig:DigestValue>
+      <dsig:DigestValue>U0Wtd6Ff+o0MwdEE3He72LQ36pgHZJQAFyVJHRYQjrU=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -16,8 +16,8 @@ namespace DB_DailyErrorReporting
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, my name is DER, Daily Error Reporting");
-            Console.WriteLine("starting, I run queries and send the results as a spreadsheet");
+            TextUtils.Comment("Hello, my name is DER, Daily Error Reporting");
+            TextUtils.Comment("starting, I run queries and send the results as a spreadsheet");
             //var interpret = new InterpretText(); 
             string excelLocation = ConfigurationManager.ConnectionStrings["ExcelLocation"].ConnectionString; 
             var import = new ImportExcelTable(excelLocation, 1);
@@ -25,6 +25,8 @@ namespace DB_DailyErrorReporting
             {
                 var interpret = new InterpretDataTable(import.DataImport);
             }
+
+            var cleanup = new CleanUp();
         }
     }
 
@@ -56,8 +58,8 @@ namespace DB_DailyErrorReporting
             if (!File.Exists(ExcelFileLocation)) throw new FileNotFoundException(ExcelFileLocation);
 
             // connection string
-            var cnnStr = String.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties=\"Excel 8.0;IMEX=1;HDR=NO\"", ExcelFileLocation);
-
+            var cnnStr = String.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=Excel 12.0;", ExcelFileLocation);
+            //"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties=\"Excel 8.0;IMEX=1;HDR=NO\""
             using (var cnn = new OleDbConnection(cnnStr))
             {
                 var dt = new DataTable();
@@ -86,16 +88,23 @@ namespace DB_DailyErrorReporting
         }
         private void makeHeaders()
         {
-            foreach (DataColumn column in DataImport.Columns)
+            try
             {
-                string cName = DataImport.Rows[0][column.ColumnName].ToString();
-                if (!DataImport.Columns.Contains(cName) && cName != "")
+                foreach (DataColumn column in DataImport.Columns)
                 {
-                    column.ColumnName = cName;
+                    string cName = DataImport.Rows[0][column.ColumnName].ToString();
+                    if (!DataImport.Columns.Contains(cName) && cName != "")
+                    {
+                        column.ColumnName = cName;
+                    }
                 }
+                DataImport.Rows[0].Delete(); //Delete the row that has the headers
+                DataImport.AcceptChanges();
             }
-            DataImport.Rows[0].Delete(); //Delete the row that has the headers
-            DataImport.AcceptChanges();
+            catch (Exception e)
+            {
+                TextUtils.Comment(e.Message);
+            }
         }
     }
     class InterpretDataTable

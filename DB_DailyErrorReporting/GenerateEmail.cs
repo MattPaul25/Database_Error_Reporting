@@ -17,12 +17,12 @@ namespace DB_DailyErrorReporting
         public GenerateEmail(EmailObject emlObj)
         {
             // TODO: Complete member initialization
-            this.sqlString = emlObj.Emails;
-            this.users = emlObj.Queries;
+            this.sqlString = emlObj.Queries;
+            this.users = emlObj.Emails;
             this.excelFolder = ConfigurationManager.ConnectionStrings["wbLoc"].ConnectionString;
             CreateSpreadsheets();
-            CreateEmail();
-            DeleteFiles();
+            var emlSend = new SendEmail(emlObj, excelFolder);
+    
         }
 
        
@@ -42,19 +42,7 @@ namespace DB_DailyErrorReporting
                 }
             }
         }
-        private void CreateEmail()
-        {
-            var emlSend = new SendEmail(users, excelFolder);
-        }
-        private void DeleteFiles()
-        {
-            DirectoryInfo dir = new DirectoryInfo(excelFolder);
-            foreach (FileInfo fi in dir.GetFiles())
-            {
-                fi.Delete();
-            }
-        }
-        
+             
 
     }
 }

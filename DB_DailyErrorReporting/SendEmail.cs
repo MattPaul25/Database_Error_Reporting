@@ -10,34 +10,41 @@ namespace DB_DailyErrorReporting
     class SendEmail
     {
         private DateTime today;
-        public SendEmail(string DistributionList, string DownloadDestination)
+        private string AttachmentDestination;
+        
+        public SendEmail(EmailObject eml, string DownloadDestination)
         {
-            today = DateTime.Today;
-            string myDate = today.ToString("dd MMMM yyyy");
-            sendEmail(DistributionList, DownloadDestination, myDate);
+            AttachmentDestination = DownloadDestination;
+            today = DateTime.Today;            
+            sendEmail(eml);
         }
-        private void sendEmail(string DistributionList, string AttachmentDestination, string aDate)
-        {           
+        private void sendEmail(EmailObject eml)
+        {
+            string myDate = today.ToString("dd MMMM yyyy");
             //new outlook instance
-            Outlook.Application app = new Outlook.Application();            
-            Outlook.MailItem mail = app.CreateItem(Outlook.OlItemType.olMailItem);           
-            string[] files = Directory.GetFiles(AttachmentDestination);
-            int fileCount = 0;
-            foreach (string file in files)
-	        {
-                Console.WriteLine("attatching file : " + file);
-                mail.Attachments.Add(file);
-                fileCount++;
-	        }
-            if (fileCount > 0)
+            
+            Outlook.Application app = new Outlook.Application();
+            Outlook.MailItem mail = app.CreateItem(Outlook.OlItemType.olMailItem);
             {
-                mail.Importance = Outlook.OlImportance.olImportanceHigh;
-                mail.Subject = aDate + "  Daily Report";
-                mail.To = DistributionList;
-                mail.Body = "Daily Report Email ";
-                Console.WriteLine("sending...");
-                mail.Send();
+                string[] files = Directory.GetFiles(AttachmentDestination);
+                int fileCount = 0;
+                foreach (string file in files)
+                {
+                    Console.WriteLine("attatching file : " + file);
+                    mail.Attachments.Add(file);
+                    fileCount++;
+                }
+                if (fileCount > 0)
+                {
+                    mail.Importance = Outlook.OlImportance.olImportanceHigh;
+                    mail.Subject = myDate + " " + eml.EmailSubject;
+                    mail.To = eml.Emails;
+                    mail.Body = eml.EmailBody;
+                    Console.WriteLine("sending...");
+                    mail.Send();
+                }
             }
+            
         }
     }
 }

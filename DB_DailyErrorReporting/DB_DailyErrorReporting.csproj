@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CleanUp.cs" />
     <Compile Include="SendEmail.cs" />
     <Compile Include="GenerateEmail.cs" />
     <Compile Include="makeSqlString.cs" />
